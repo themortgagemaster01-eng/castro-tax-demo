@@ -35,7 +35,7 @@
   .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:16px}
   .brand{display:flex;align-items:center;gap:12px}
-  .crest{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--navy2));display:grid;place-items:center;color:var(--gold2);font-family:var(--disp);font-weight:700;font-size:23px;border:1px solid rgba(199,154,63,.45);box-shadow:0 6px 16px rgba(11,22,38,.25)}
+  .crest{width:46px;height:46px;border-radius:11px;background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=140&q=80');background-size:cover;background-position:center;border:1.5px solid rgba(199,154,63,.6);box-shadow:0 6px 16px rgba(11,22,38,.25)}
   .brand .nm{font-family:var(--disp);font-weight:700;font-size:21px;color:var(--navy);line-height:1.05}
   .brand .nm small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700}
   .nav nav{display:flex;gap:26px;font-weight:600;font-size:14.5px;color:#33425a} .nav nav a:hover{color:var(--gold)}
@@ -95,10 +95,14 @@
   .fimg .badge{position:absolute;left:22px;bottom:22px;background:rgba(11,22,38,.82);backdrop-filter:blur(8px);border:1px solid rgba(230,197,116,.3);border-radius:14px;padding:16px 20px;color:#fff}
   .fimg .badge .b{font-family:var(--disp);font-size:30px;color:var(--gold2)} .fimg .badge .s{font-size:12px;color:#cdd6e3}
   .why-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px} @media(max-width:520px){.why-list{grid-template-columns:1fr}}
-  .wl{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px;transition:transform .2s,box-shadow .2s,border-color .2s}
-  .wl:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,22,38,.12);border-color:rgba(199,154,63,.4)}
-  .wl .wi{color:var(--gold);margin-bottom:8px} .wl .wi svg{width:24px;height:24px}
-  .wl h4{font-family:var(--disp);font-size:20px;color:var(--navy);margin-bottom:3px} .wl p{font-size:13px;color:var(--mut)}
+  .wl{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:20px;min-height:158px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;box-shadow:0 14px 34px rgba(11,22,38,.16);transition:transform .25s,box-shadow .25s}
+  .wl .wlbg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;filter:brightness(.5) saturate(1.05);transition:transform .6s ease,filter .4s}
+  .wl .wlsc{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(8,16,28,.94) 20%,rgba(8,16,28,.55) 60%,rgba(8,16,28,.3))}
+  .wl:hover{transform:translateY(-5px);box-shadow:0 24px 50px rgba(11,22,38,.3)}
+  .wl:hover .wlbg{transform:scale(1.08);filter:brightness(.6) saturate(1.1)}
+  .wl>*{position:relative;z-index:2}
+  .wl .wi{color:var(--gold2);margin-bottom:8px} .wl .wi svg{width:26px;height:26px}
+  .wl h4{font-family:var(--disp);font-size:21px;color:#fff;margin-bottom:3px} .wl p{font-size:13px;color:#cdd6e3}
   .states{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
   .states span{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 17px;font-weight:700;color:var(--navy);font-size:14px;box-shadow:0 6px 16px rgba(11,22,38,.06)}
 
@@ -188,7 +192,7 @@
 </div></div>
 
 <div class="nav"><div class="wrap">
-  <div class="brand"><div class="crest">C</div><div class="nm">Castro Family<small>Solutions LLC</small></div></div>
+  <div class="brand"><div class="crest" title="The Castro team"></div><div class="nm">Castro Family<small>Solutions LLC</small></div></div>
   <nav><a href="#services">Services</a><a href="#why">Why Us</a><a href="#team">Our Team</a><a href="#portal">Client Portal</a><a href="#contact">Contact</a></nav>
   <a class="btn gold" href="https://castrofamilytax.taxdome.com/app" style="padding:12px 22px">Client Login</a>
 </div></div>
@@ -288,10 +292,10 @@
     <div class="eyebrow">Why Castro Family Solutions</div><h2 class="h">A family firm that actually answers the phone</h2>
     <p class="sub">We're small enough to know your name and your numbers — and experienced enough to handle the complicated stuff. You get senior attention, straight answers, and a partner invested in your year-round success.</p>
     <div class="why-list">
-      <div class="wl"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9 18l-5-5"/></svg></div><h4>Personal attention</h4><p>Work directly with a Castro — not a call center.</p></div>
-      <div class="wl"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h4>Small-business focus</h4><p>S-corps, partnerships &amp; sole props are our specialty.</p></div>
-      <div class="wl"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div><h4>Secure portal</h4><p>Upload, e-sign, and pay from any device, 24/7.</p></div>
-      <div class="wl"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h4>Year-round support</h4><p>Planning and bookkeeping, not just April.</p></div>
+      <div class="wl"><div class="wlbg" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=72')"></div><div class="wlsc"></div><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9 18l-5-5"/></svg></div><h4>Personal attention</h4><p>Work directly with a Castro — not a call center.</p></div>
+      <div class="wl"><div class="wlbg" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=72')"></div><div class="wlsc"></div><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h4>Small-business focus</h4><p>S-corps, partnerships &amp; sole props are our specialty.</p></div>
+      <div class="wl"><div class="wlbg" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=72')"></div><div class="wlsc"></div><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div><h4>Secure portal</h4><p>Upload, e-sign, and pay from any device, 24/7.</p></div>
+      <div class="wl"><div class="wlbg" style="background-image:url('https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&w=600&q=72')"></div><div class="wlsc"></div><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h4>Year-round support</h4><p>Planning and bookkeeping, not just April.</p></div>
     </div>
     <div class="states"><span>New York</span><span>Connecticut</span><span>New Jersey</span></div>
   </div>
